@@ -27,7 +27,7 @@ class Carrera:
     def delMateria(self,materia):
         self.__materias.remove(materia)
 
-    def listarMaterias(self):
+    def listarMaterias(self, materia):
         print("""      Las materias registradas a la carrera son: """)
-        for mat in self.__materias:
+        for mat in materia.__materias:
             print(mat.getMateria())

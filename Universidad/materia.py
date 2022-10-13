@@ -8,6 +8,15 @@ class Materia():
         self.__titular = Profesor
         self.__alumnos = list()
 
+    def getMateria(self):
+        return self.__nombre
+
+    def getAlumnos(self):
+        return self.__alumnos
+
+    def getTitular(self):
+        return self.__titular
+
     def addAlumno(self,alumno):
         self.__alumnos.append(alumno)
 

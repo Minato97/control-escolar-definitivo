@@ -1,4 +1,5 @@
 from Universidad.carrera import Carrera
+from Universidad.materia import Materia
 import sys
 import os
 import time
@@ -37,37 +38,41 @@ def main():
             main()
 
     elif op == 2:  # 2) Registrar materias de una carrera.
-        id_carrera = input("Introduce la clave de la carrera: ")
-        crn = input("Introduce el crn de la materia: ")
-        nombre = input("Introduce el nombre de la carrera: ")
-        semestre = input("Introduce el semestre de la carrera: ")
-        existe_carrera = False
-        for i in carreras:
-            if i.getid() == id_carrera:
-                existe_carrera = True
-                break
-        if existe_carrera:
-            if i.addMateria(crn, nombre, semestre):
-                print("La materia se registro de forma correcta")
-        else:
-            print("la clave de la carrera no fue encontrada.")
+        nombre_carrera = input("Introduce el nombre de la carrera: ")
+        for carr in carreras:
+            if carr.getCarrera() == nombre_carrera:
+                nombre_materia = input("Introduce el nombre de la materia: ")
+                nueva_materia = Materia(nombre_materia)
+                carr.addMateria(nueva_materia)
+                print(carr.getMaterias())
+                os.system("pause")
+                main()
+            else:
+                print("la clave de la carrera no fue encontrada.")
+                main()
 
     elif op == 3:  # 3) Inscribir alumnos a una materia.
         pass
     elif op == 4:  # 4) Registrar profesor a una materia.
-        print("*************************************")
-        print("se tienen {} carerras registradas.".format((len(carrera))))
-        print("*************************************")
-        for i in carreras:
-            print("Clave de la carrera: {}".format(i.getid()))
-            print("Nombre de la carrera: {}".format(i.getnombre()))
-        print("*************************************")
+       pass
     elif op == 5:  # 5) Listar materias de una carrera.
-        pass
-    elif op == 6:  # 6) Listar carreras.
-        print("""      Las carreras existentes son: """)
+        nombre_carrera = input("Introduce el nombre de la carrera: ")
         for carr in carreras:
-            print(carr.getCarrera())
+            if carr.getCarrera() == nombre_carrera:
+                carr.listarMaterias(carr)
+                main()
+            else:
+                print("la clave de la carrera no fue encontrada.")
+                main()
+    elif op == 6:  # 6) Listar carreras.
+        if len(carreras) == 0:
+            print("No se tienen carreras registradas")
+            os.system("pause")
+            main()
+        else:
+            print("""      Las carreras existentes son: """)
+            for carr in carreras:
+                print(carr.getCarrera())
         main()
     elif op == 7:  # 7) Listar alumnos inscritos a una materia.
         pass
