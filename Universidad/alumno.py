@@ -4,7 +4,7 @@ from dateutil.relativedelta import relativedelta
 
 class Alumno:
 
-    def __init__(self, matricula, nombre, fecha_nacimiento, fecha_ingreso, genero, ciudad):
+    def __init__(self, matricula=0, nombre="", fecha_nacimiento="", fecha_ingreso="", genero="", ciudad=""):
         self.__matricula = int(matricula)
         self.__nombre = str(nombre)
         self.__fecha_nacimiento = fecha_nacimiento
@@ -53,4 +53,3 @@ class Alumno:
 # alumno = Alumno(123,"fe",date(2000,5,2),date(2000,10,5),"m","g")
 #
 # print(alumno.calcularEdad(alumno))
-

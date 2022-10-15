@@ -1,7 +1,7 @@
 from Universidad.profesor import Profesor
 from Universidad.alumno import Alumno
 
-class Materia():
+class Materia:
 
     def __init__(self, nombre):
         self.__nombre = str(nombre)
