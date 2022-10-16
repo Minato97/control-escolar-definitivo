@@ -24,7 +24,7 @@ class Alumno:
     def getFechaingreso(self):
         return self.__fecha_ingreso
 
-    def getgenero(self):
+    def getGenero(self):
         return self.__genero
 
     def getCiudad(self):
@@ -33,6 +33,9 @@ class Alumno:
     def calcularEdad(self,alumno):
         edad = relativedelta(datetime.now(), alumno.getFechanacimiento())
         return edad.years
+
+    def setMatricula(self, matricula):
+        self.__matricula = matricula
 
     def setNombre(self, nombre):
         self.__nombre = nombre

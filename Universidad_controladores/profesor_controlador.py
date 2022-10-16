@@ -1,0 +1,46 @@
+
+from Universidad_modelos.profesor_modelo import *
+import os
+
+
+
+def registrarProfesor():
+    numero_empleado = int(input("Introduce el número de empleado:"))
+    if len(profesores) != 0:
+        for prof in profesores:
+            if int(prof.getNoempleado()) == numero_empleado:
+                print("El profesor {} ya existe".format(prof.getProfesor()))
+                os.system("pause")
+                os.system("cls")
+                pass
+            else:
+                print("Ingresa los siguientes datos del profesor: ")
+                profesor = Profesor(numero_empleado)
+                # profesor.setNoempleado((input("Número de empleado: ")))
+                profesor.setNombre(input("Nombre: "))
+                print("\nFecha de ingreso")
+                anio = int(input("Año: "))
+                mes = int(input("Mes: "))
+                dia = int(input("Dia: "))
+                profesor.setFechaingreso(date(anio, mes, dia))
+                profesores.append(profesor)
+                print("Profesor registrado exitosamente")
+                os.system("pause")
+                os.system("cls")
+                pass
+    else:
+        print("Ingresa los siguientes datos del profesor: ")
+        profesor = Profesor(numero_empleado)
+        # profesor.setNoempleado((input("Número de empleado: ")))
+        profesor.setNombre(input("Nombre: "))
+        print("\nFecha de ingreso")
+        anio = int(input("Año: "))
+        mes = int(input("Mes: "))
+        dia = int(input("Dia: "))
+        profesor.setFechaingreso(date(anio, mes, dia))
+        profesores.append(profesor)
+        print("Profesor registrado exitosamente")
+        os.system("pause")
+        os.system("cls")
+        pass
+

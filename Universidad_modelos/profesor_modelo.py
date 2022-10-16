@@ -1,15 +1,17 @@
 from dateutil.relativedelta import relativedelta
 from datetime import date, datetime
 
-class Profesor:
-    __no_empleado = None
-    __nombre = None
-    __fecha_ingreso = None
+profesores=list()
 
-    def __init__(self, no_empleado, nombre, fecha_ingreso):
-        self.__no_empleado = int(no_empleado)
-        self.__nombre = str(nombre)
-        self.__fecha_ingreso = fecha_ingreso
+class Profesor:
+    # __no_empleado = None
+    # __nombre = None
+    # __fecha_ingreso = None
+
+    def __init__(self,no_empleado):
+        self.__no_empleado = no_empleado
+        self.__nombre = str
+        self.__fecha_ingreso = date
 
     def getNoempleado(self):
         return self.__nombre
@@ -22,7 +24,10 @@ class Profesor:
 
     def calcularAntiguedad(self,profesor):
         antiguedad = relativedelta(datetime.now(), profesor.getFechaingreso())
-        return edad.years
+        return antiguedad.years
+
+    def setNoempleado(self, no_empleado):
+        self.__no_empleado = no_empleado
 
     def setNombre(self, nombre):
         self.__nombre = nombre
