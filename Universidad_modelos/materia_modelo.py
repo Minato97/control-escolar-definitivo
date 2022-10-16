@@ -1,5 +1,4 @@
 from Universidad_modelos.profesor_modelo import Profesor
-from Universidad_modelos.alumno_modelo import Alumno
 
 class Materia:
 

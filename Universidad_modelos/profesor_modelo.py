@@ -14,7 +14,7 @@ class Profesor:
         self.__fecha_ingreso = date
 
     def getNoempleado(self):
-        return self.__nombre
+        return self.__no_empleado
 
     def getProfesor(self):
         return self.__nombre

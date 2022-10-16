@@ -6,7 +6,7 @@ import time
 
 
 def main():
-    
+
     print("Bienvenido al sistema de control escolar")
     print("1) Registrar carreras.")
     print("2) Registrar materias de una carrera.")
@@ -20,8 +20,20 @@ def main():
     print("10) Listar alumnos de una carrera.")
     print("11) Listar materias que imparte un profesor.")
     print("12) Salir.")
-    op = int(input("Elije una opcion: "))
-
+    try:
+        op = int(input("Elije una opcion: "))
+        if op > 12 or op <= 0:
+            print("Por favor ingrese una opción válida")
+            os.system("pause")
+            os.system("cls")
+            main()
+    except ValueError:
+        print("Por favor ingrese una opción válida")
+        os.system("pause")
+        os.system("cls")
+        main()
+    except:
+        pass
 
     if op == 1:  # 1) Registrar carreras.
         registrarCarreras()
@@ -42,9 +54,10 @@ def main():
     elif op == 5:  # 5) Inscribir alumnos a una materia.
         inscribirAlumnosMateria()
         main()
-                        
+
     elif op == 6:  # 6) Asignar profesor a una materia.
-       pass
+       asignarProfesorMateria()
+       main()
 
     elif op == 7:  # 7) Listar materias de una carrera.
         listarMateriasCarrera()
@@ -63,7 +76,8 @@ def main():
         main()
 
     elif op == 11:  # 11) Listar materias que imparte un profesor.
-        pass
+        listarMateriasImpartidas()
+        main()
 
     elif op == 12:  # 12) Salir.
         cadena = "Gracias por usar software de calidad\n¡Hasta pronto!..."
@@ -72,6 +86,7 @@ def main():
             print(cadena[i], end="")
             time.sleep(0.1)
         sys.exit()
+
 
 if __name__ == "__main__":
     main()

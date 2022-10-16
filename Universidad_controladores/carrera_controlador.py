@@ -1,24 +1,34 @@
 from Universidad_modelos.carrera_modelo import *
 from Universidad_modelos.materia_modelo import *
 from datetime import date
+
 import os
 
 def registrarCarreras():
     nombre_carrera = input("Introduce el nombre de la carrera:")
     if len(carreras) != 0:
+        flag = False
         for carr in carreras:
             if carr.getCarrera() == nombre_carrera:
                 print("El nombre {} ya existe, introduce uno distinto".format(nombre_carrera))
+                os.system("pause")
+                os.system("cls")
+                flag = True
                 pass
-        carrera = Carrera(nombre_carrera)
-        carreras.append(carrera)
+        if flag == False:
+            carrera = Carrera(nombre_carrera)
+            carreras.append(carrera)
+            print("Carrera registrada correctamente")
+            os.system("pause")
+            os.system("cls")
+            pass
     else:
         carrera = Carrera(nombre_carrera)
         carreras.append(carrera)
-    print("Carrera registrada correctamente")
-    os.system("pause")
-    os.system("cls")
-    pass
+        print("Carrera registrada correctamente")
+        os.system("pause")
+        os.system("cls")
+        pass
 
 def registrarMateriasCarrera():
     nombre_carrera = input("Introduce el nombre de la carrera: ")

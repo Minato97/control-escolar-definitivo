@@ -1,4 +1,3 @@
-from Universidad_modelos.materia_modelo import Materia
 
 carreras = list()
 class Carrera:

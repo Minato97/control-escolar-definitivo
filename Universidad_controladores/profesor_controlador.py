@@ -1,5 +1,6 @@
 
 from Universidad_modelos.profesor_modelo import *
+from Universidad_modelos.carrera_modelo import *
 import os
 
 
@@ -44,3 +45,20 @@ def registrarProfesor():
         os.system("cls")
         pass
 
+def listarMateriasImpartidas():
+    numero_empleado = int(input("Introduzca el número de empleado del profesor que desea listar sus materias impartidas: "))
+    for prof in profesores:
+        if int(prof.getNoempleado()) == numero_empleado:
+            print("Las materias que imparte el profesor ",prof.getProfesor()," son: ")
+            for carr in carreras:
+                for mat in carr.getMaterias():
+                    if mat.getTitular().getNoempleado() == numero_empleado:
+                        print(mat.getMateria())
+                        os.system("pause")
+                        os.system("cls")
+                        pass
+        else:
+            print("El número de empleado no coincide con ningún registro")
+            os.system("pause")
+            os.system("cls")
+        pass
