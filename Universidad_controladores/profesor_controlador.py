@@ -18,13 +18,14 @@ def registrarProfesor():
                 print("Ingresa los siguientes datos del profesor: ")
                 profesor = Profesor(numero_empleado)
                 # profesor.setNoempleado((input("Número de empleado: ")))
-                profesor.setNombre(input("Nombre: "))
+                profesor.setNombre(input("\nNombre: "))
                 print("\nFecha de ingreso")
                 anio = int(input("Año: "))
                 mes = int(input("Mes: "))
                 dia = int(input("Dia: "))
                 profesor.setFechaingreso(date(anio, mes, dia))
                 profesores.append(profesor)
+                os.system("cls")                
                 print("Profesor registrado exitosamente")
                 os.system("pause")
                 os.system("cls")
@@ -33,13 +34,14 @@ def registrarProfesor():
         print("Ingresa los siguientes datos del profesor: ")
         profesor = Profesor(numero_empleado)
         # profesor.setNoempleado((input("Número de empleado: ")))
-        profesor.setNombre(input("Nombre: "))
+        profesor.setNombre(input("\nNombre: "))
         print("\nFecha de ingreso")
         anio = int(input("Año: "))
         mes = int(input("Mes: "))
         dia = int(input("Dia: "))
         profesor.setFechaingreso(date(anio, mes, dia))
         profesores.append(profesor)
+        os.system("cls")
         print("Profesor registrado exitosamente")
         os.system("pause")
         os.system("cls")
@@ -49,6 +51,7 @@ def listarMateriasImpartidas():
     numero_empleado = int(input("Introduzca el número de empleado del profesor que desea listar sus materias impartidas: "))
     for prof in profesores:
         if int(prof.getNoempleado()) == numero_empleado:
+            os.system("cls")
             print("Las materias que imparte el profesor ",prof.getProfesor()," son: ")
             for carr in carreras:
                 for mat in carr.getMaterias():
@@ -58,6 +61,7 @@ def listarMateriasImpartidas():
                         os.system("cls")
                         pass
         else:
+            os.system("cls")
             print("El número de empleado no coincide con ningún registro")
             os.system("pause")
             os.system("cls")

@@ -7,12 +7,7 @@ from datetime import date
 import os
 
 def registrarCarreras():
-    while True:
-        try:
-            nombre_carrera = (input("Introduce el nombre de la carrera:"))
-            break
-        except ValueError:
-            print ("Ingrese> ")
+    nombre_carrera = (input("Introduce el nombre de la carrera:"))
     if len(carreras) != 0:
         flag = False
         for carr in carreras:

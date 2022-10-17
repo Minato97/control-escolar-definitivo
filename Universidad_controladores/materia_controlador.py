@@ -46,6 +46,7 @@ def listarAlumnosMateria():
                     os.system("cls")
                     pass
                 else:
+                    os.system("cls")
                     print("El nombre de la materia no coincide con los registros actuales")
                     os.system("pause")
                     os.system("cls")
