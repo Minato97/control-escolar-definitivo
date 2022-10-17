@@ -18,14 +18,17 @@ def inscribirAlumnosMateria():
                             os.system("cls")
                             pass
                         else:
+                            os.system("cls")
                             print("El alumno con dicha matricula no esta registrado en la carrera")
                             pass
                 else:
+                    os.system("cls")
                     print("El nombre de la materia no coincide con los registros actuales")
                     os.system("pause")
                     os.system("cls")
                     pass
         else:
+            os.system("cls")
             print("El nombre de la carrera no coincide con los registros actuales")
             os.system("pause")
             os.system("cls")
@@ -48,6 +51,7 @@ def listarAlumnosMateria():
                     os.system("cls")
                     pass
         else:
+            os.system("cls")
             print("La carrera no fue encontada")
             os.system("pause")
             pass
@@ -63,21 +67,25 @@ def asignarProfesorMateria():
                     for prof in profesores:
                         if int(prof.getNoempleado()) == numero_empleado:
                             mat.setTitular(prof)
+                            os.system("cls")
                             print("El profesor se asigno correctamente")
                             os.system("pause")
                             os.system("cls")
                             pass
                         else:
+                            os.system("cls")
                             print("El número de empleado no coincide con ningún registro")
                             os.system("pause")
                             os.system("cls")
                             pass
                 else:
+                    os.system("cls")
                     print("El nombre de la materia no coincide con los registros actuales")
                     os.system("pause")
                     os.system("cls")
                     pass
         else:
+            os.system("cls")
             print("La carrera no fue encontada")
             os.system("pause")
             pass
