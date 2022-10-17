@@ -1,3 +1,14 @@
+# INTEGRANTES DEL EQUIPO:
+# MIGUEL GUZMAN GUZMAN
+# EDGAR GEOVANNY GUERRERO SANTANA
+# IGNACIO ANDRADE SALAZAR
+# FRANCISCO JAVIER RUIZ GODOY
+
+# Para que el programa funcione es necesario instalar las siguientes librerias:
+#  pip install python-dateutil
+#  pip instal django-relativedelta
+
+
 from Universidad_controladores.carrera_controlador import *
 from Universidad_controladores.materia_controlador import *
 from Universidad_controladores.profesor_controlador import *
